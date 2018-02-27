@@ -27,7 +27,7 @@ describe('getMinMax', () => {
     });
 
     test('\'1\' -> {min: 1, max: 1}', () => {
-        expect(getMinMax('1')).toEqual({min: 1, max: 1});vvv
+        expect(getMinMax('1')).toEqual({min: 1, max: 1});
     });
     
     test('getMinMax goes as expected', () => {
@@ -101,13 +101,20 @@ describe('printNumbers', () =>{
                                             ' 2  6 10\n' +
                                             ' 3  7 11');
     });
+
     test('16, 7 -> 0  3  6  9 12 15\n' +
-    '              1  4  7 10 13 16\n' +
-    '              2  5  8 11 14 ', () => {
-   expect(printNumbers(11, 3)).toMatch(' 0  3  6  9 12 15\n' +
-                                       ' 1  4  7 10 13 16\n' +
-                                       ' 2  5 10 11 12');
-});
+         '         1  4  7 10 13 16\n' +
+         '         2  5  8 11 14 ', () => {
+        expect(printNumbers(16, 7)).toMatch(' 0  3  6  9 12 15\n' +
+                                            ' 1  4  7 10 13 16\n' +
+                                            ' 2  5 10 11 12');
+    });
+
+    test('0, 7 -> 0', () => {
+        expect(printNumbers(0, 7)).toMatch(' 0');
+    });
+    
+
     test('printNumbers goes as expected', () => {
         expect(printNumbers).toThrow();
     });
@@ -128,6 +135,10 @@ describe('RLE', () => {
 
     test('FFFFAAASASUENZFEWFFFFFF -> F4A3SASUENZFEWF6', () => {
         expect(rle('FFFFAAASASUENZFEWFFFFFF')).toBe('F4A3SASUENZFEWF6');
+    });
+
+    test('A -> A', () => {
+        expect(rle('A')).toBe('A');
     });
     
     test('rle goes as expected', () => {
