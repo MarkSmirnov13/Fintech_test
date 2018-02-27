@@ -1,6 +1,7 @@
 const fibonacciSimple = require('./tasks').fibonacciSimple;
 const rle = require('./tasks').rle;
 const getMinMax = require('./tasks').getMinMax;
+const printNumbers = require('./tasks').printNumbers;
 
 describe('getMinMax', () => {
     test('\'1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028\' -> { min: -1028, max: 15 }', () => {
@@ -19,6 +20,7 @@ describe('getMinMax', () => {
         expect(getMinMax('1')).toEqual({min: 1, max: 1});
     });
 });
+
 describe('fibonacciSimple', () => {
     test('0 -> 0', () => {
         expect(fibonacciSimple(0)).toBe(0);
@@ -44,6 +46,7 @@ describe('fibonacciSimple', () => {
     });
 });
 
+
 describe('RLE', () => {
     test('Пустая строка', () => {
         expect(rle('')).toBe('');
@@ -59,5 +62,15 @@ describe('RLE', () => {
 
     test('FFFFAAASASUENZFEWFFFFFF -> F4A3SASUENZFEWF6', () => {
         expect(rle('FFFFAAASASUENZFEWFFFFFF')).toBe('F4A3SASUENZFEWF6');
+    });
+});
+
+
+describe('printNumbers', () => {
+    test('Одна колонка', () => {
+        expect(printNumbers(10, 1)).toBe(' 0\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10');
+    });
+    test('Чисел меньше колонок', () => {
+        expect(printNumbers(4, 5)).toBe(' 0  1  2  3  4');
     });
 });
