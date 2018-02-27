@@ -1,7 +1,7 @@
 const fibonacciSimple = require('./tasks').fibonacciSimple;
 const rle = require('./tasks').rle;
 const getMinMax = require('./tasks').getMinMax;
-
+const fibonacciWithCache = require('./tasks').fibonacciWithCache;
 
 
 describe('getMinMax', () => {
@@ -46,6 +46,7 @@ describe('fibonacciSimple', () => {
         expect(fibonacciSimple(2)).toBe(1);
     });
 });
+
 
 describe('RLE', () => {
 
