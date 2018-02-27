@@ -47,21 +47,6 @@ describe('fibonacciSimple', () => {
 });
 
 
-describe('fibonacciSimple', () => {
-    test('0 -> 0', () => {
-        expect(fibonacciSimple(0)).toBe(0);
-    });
-
-    test('1 -> 1', () => {
-        expect(fibonacciSimple(1)).toBe(1);
-    });
-
-
-    test('11 -> 89', () => {
-        expect(fibonacciSimple(11)).toBe(89);
-    });
-});
-
 describe('RLE', () => {
     test('Пустая строка', () => {
         expect(rle('')).toBe('');
