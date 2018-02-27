@@ -29,10 +29,6 @@ describe('getMinMax', () => {
     test('\'1\' -> {min: 1, max: 1}', () => {
         expect(getMinMax('1')).toEqual({min: 1, max: 1});
     });
-    
-    test('getMinMax goes as expected', () => {
-        expect(getMinMax).toThrow();
-    });
 });
 describe('fibonacciSimple', () => {
     test('0 -> 0', () => {
@@ -56,10 +52,6 @@ describe('fibonacciSimple', () => {
 
     test('2 -> 1', () => {
         expect(fibonacciSimple(2)).toBe(1);
-    });
-    
-    test('fibonacciSimple goes as expected', () => {
-        expect(fibonacciSimple).toThrow();
     });
 });
 
@@ -86,23 +78,14 @@ describe('fibonacciWithCache', () => {
     test('2 -> 1', () => {
         expect(fibonacciWithCache(2)).toBe(1);
     });
-    test('fibonacciWithCache goes as expected', () => {
-        expect(fibonacciWithCache).toThrow();
-    });
 });
 
 describe('printNumbers', () =>{
-    test('11, 3 -> 0  4  8\n' +
-         '               1  5  9\n' +
-         '               2  6 10\n' +
-         '               3  7 11', () => {
+    test('11, 3 -> 12 numbers in matrix with max column and min rows', () => {
         expect(printNumbers(11, 3)).toMatch(' 0  4  8\n' +
                                             ' 1  5  9\n' +
                                             ' 2  6 10\n' +
                                             ' 3  7 11');
-    });
-    test('printNumbers goes as expected', () => {
-        expect(printNumbers).toThrow();
     });
 });
 
@@ -121,9 +104,5 @@ describe('RLE', () => {
 
     test('FFFFAAASASUENZFEWFFFFFF -> F4A3SASUENZFEWF6', () => {
         expect(rle('FFFFAAASASUENZFEWFFFFFF')).toBe('F4A3SASUENZFEWF6');
-    });
-    
-    test('rle goes as expected', () => {
-        expect(rle).toThrow();
     });
 });
