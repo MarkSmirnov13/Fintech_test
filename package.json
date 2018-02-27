@@ -1,0 +1,10 @@
+{
+  "name": "tinkoff_1",
+  "version": "0.0.1",
+  "dependencies": {
+    
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
