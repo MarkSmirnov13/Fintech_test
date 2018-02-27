@@ -44,15 +44,6 @@ describe('fibonacciSimple', () => {
     });
 });
 
-describe('printNumbers', () => {
-    test('Одна колонка', () => {
-        expect(printNumbers(10, 1)).toBe(' 0\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10');
-    });
-    test('Чисел меньше колонок', () => {
-        expect(printNumbers(4, 5)).toBe(' 0  1  2  3  4');
-    });
-});
-
 describe('RLE', () => {
     test('Пустая строка', () => {
         expect(rle('')).toBe('');
@@ -68,5 +59,15 @@ describe('RLE', () => {
 
     test('FFFFAAASASUENZFEWFFFFFF -> F4A3SASUENZFEWF6', () => {
         expect(rle('FFFFAAASASUENZFEWFFFFFF')).toBe('F4A3SASUENZFEWF6');
+    });
+});
+
+
+describe('printNumbers', () => {
+    test('Одна колонка', () => {
+        expect(printNumbers(10, 1)).toBe(' 0\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10');
+    });
+    test('Чисел меньше колонок', () => {
+        expect(printNumbers(4, 5)).toBe(' 0  1  2  3  4');
     });
 });
