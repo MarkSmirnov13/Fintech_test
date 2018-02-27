@@ -30,6 +30,7 @@ describe('getMinMax', () => {
         expect(getMinMax('1')).toEqual({min: 1, max: 1});
     });
 });
+
 describe('fibonacciSimple', () => {
     test('0 -> 0', () => {
         expect(fibonacciSimple(0)).toBe(0);
@@ -39,16 +40,13 @@ describe('fibonacciSimple', () => {
         expect(fibonacciSimple(1)).toBe(1);
     });
 
-
     test('11 -> 89', () => {
         expect(fibonacciSimple(11)).toBe(89);
     });
 
-
     test('20 -> 6765', () => {
         expect(fibonacciSimple(20)).toBe(6765);
     });
-
 
     test('2 -> 1', () => {
         expect(fibonacciSimple(2)).toBe(1);
@@ -80,15 +78,6 @@ describe('fibonacciWithCache', () => {
     });
 });
 
-describe('printNumbers', () =>{
-    test('11, 3 -> 12 numbers in matrix with max column and min rows', () => {
-        expect(printNumbers(11, 3)).toMatch(' 0  4  8\n' +
-                                            ' 1  5  9\n' +
-                                            ' 2  6 10\n' +
-                                            ' 3  7 11');
-    });
-});
-
 describe('RLE', () => {
     test('Пустая строка', () => {
         expect(rle('')).toBe('');
@@ -104,5 +93,21 @@ describe('RLE', () => {
 
     test('FFFFAAASASUENZFEWFFFFFF -> F4A3SASUENZFEWF6', () => {
         expect(rle('FFFFAAASASUENZFEWFFFFFF')).toBe('F4A3SASUENZFEWF6');
+    });
+});
+
+
+describe('printNumbers', () => {
+    test('Одна колонка', () => {
+        expect(printNumbers(10, 1)).toBe(' 0\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10');
+    });
+    test('Чисел меньше колонок', () => {
+        expect(printNumbers(4, 5)).toBe(' 0  1  2  3  4');
+    });
+    test('11, 3 -> 12 numbers in matrix with max column and min rows', () => {
+        expect(printNumbers(11, 3)).toMatch(' 0  4  8\n' +
+                                            ' 1  5  9\n' +
+                                            ' 2  6 10\n' +
+                                            ' 3  7 11');
     });
 });
