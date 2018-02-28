@@ -36,9 +36,9 @@ const data = Array.from({ length: 21 }, (v, k) => k-10);
 const expected = [-55,34,-21,13,-8,5,-3,2,-1,1,0,1,1,2,3,5,8,13,21,34,55];
 
 describe('fibonacciSimple', () => {
-    const result = data.map(fibonacciSimple);
-
+    
     test('Числа от -10 до 10', () => {
+        const result = data.map(fibonacciSimple);
         expect(result).toEqual(expected);
     });
 
@@ -53,9 +53,9 @@ describe('fibonacciSimple', () => {
 });
 
 describe('fibonacciWithCache', () => {
-    const result = data.map(fibonacciWithCache);
-
+    
     test('Числа от -10 до 10', () => {
+        const result = data.map(fibonacciWithCache);
         expect(result).toEqual(expected);
     });
 
