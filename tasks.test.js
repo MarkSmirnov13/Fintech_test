@@ -2,6 +2,7 @@ const fibonacciSimple = require('./tasks').fibonacciSimple;
 const rle = require('./tasks').rle;
 const getMinMax = require('./tasks').getMinMax;
 const printNumbers = require('./tasks').printNumbers;
+const fibonacciWithCache = require('./tasks').fibonacciWithCache;
 
 describe('getMinMax', () => {
     test('\'Мистер X живет в доме 5 в квартире 321 на улице У, где температура -20.\' -> { max: 321, min: -20 }', () => {
@@ -31,13 +32,14 @@ describe('getMinMax', () => {
     });
 });
 
-describe('fibonacciSimple', () => {
-    test('0 -> 0', () => {
-        expect(fibonacciSimple(0)).toBe(0);
-    });
+const data = Array.from({ length: 21 }, (v, k) => k-10);
+const expected = [-55,34,-21,13,-8,5,-3,2,-1,1,0,1,1,2,3,5,8,13,21,34,55];
 
-    test('1 -> 1', () => {
-        expect(fibonacciSimple(1)).toBe(1);
+describe('fibonacciSimple', () => {
+    
+    test('Числа от -10 до 10', () => {
+        const result = data.map(fibonacciSimple);
+        expect(result).toEqual(expected);
     });
 
     test('11 -> 89', () => {
@@ -47,35 +49,24 @@ describe('fibonacciSimple', () => {
     test('20 -> 6765', () => {
         expect(fibonacciSimple(20)).toBe(6765);
     });
-
-    test('2 -> 1', () => {
-        expect(fibonacciSimple(2)).toBe(1);
-    });
+    
 });
 
 describe('fibonacciWithCache', () => {
-    test('0 -> 0', () => {
-        expect(fibonacciWithCache(0)).toBe(0);
+    
+    test('Числа от -10 до 10', () => {
+        const result = data.map(fibonacciWithCache);
+        expect(result).toEqual(expected);
     });
-
-    test('1 -> 1', () => {
-        expect(fibonacciWithCache(1)).toBe(1);
-    });
-
 
     test('11 -> 89', () => {
         expect(fibonacciWithCache(11)).toBe(89);
     });
 
-
     test('20 -> 6765', () => {
         expect(fibonacciWithCache(20)).toBe(6765);
     });
 
-
-    test('2 -> 1', () => {
-        expect(fibonacciWithCache(2)).toBe(1);
-    });
 });
 
 describe('RLE', () => {
