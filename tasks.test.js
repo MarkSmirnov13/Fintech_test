@@ -76,6 +76,36 @@ describe('fibonacciWithCache', () => {
     test('2 -> 1', () => {
         expect(fibonacciWithCache(2)).toBe(1);
     });
+
+});
+
+describe('printNumbers', () =>{
+    test('11, 3 -> 0  4  8\n' +
+         '               1  5  9\n' +
+         '               2  6 10\n' +
+         '               3  7 11', () => {
+        expect(printNumbers(11, 3)).toMatch(' 0  4  8\n' +
+                                            ' 1  5  9\n' +
+                                            ' 2  6 10\n' +
+                                            ' 3  7 11');
+    });
+
+    test('Незаполненный столбец', () => {
+        expect(printNumbers(16, 7)).toMatch(' 0  3  6  9 12 15\n' +
+                                            ' 1  4  7 10 13 16\n' +
+                                            ' 2  5 10 11 12');
+    });
+  
+    test('Одна колонка', () => {
+        expect(printNumbers(10, 1)).toBe(' 0\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10');
+    });
+    test('Чисел меньше колонок', () => {
+        expect(printNumbers(4, 5)).toBe(' 0  1  2  3  4');
+    });
+
+    test('0, 7 -> 0', () => {
+        expect(printNumbers(0, 7)).toMatch(' 0');
+    });
 });
 
 describe('RLE', () => {
@@ -94,20 +124,9 @@ describe('RLE', () => {
     test('FFFFAAASASUENZFEWFFFFFF -> F4A3SASUENZFEWF6', () => {
         expect(rle('FFFFAAASASUENZFEWFFFFFF')).toBe('F4A3SASUENZFEWF6');
     });
-});
 
+    test('A -> A', () => {
+        expect(rle('A')).toBe('A');
+    });
 
-describe('printNumbers', () => {
-    test('Одна колонка', () => {
-        expect(printNumbers(10, 1)).toBe(' 0\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10');
-    });
-    test('Чисел меньше колонок', () => {
-        expect(printNumbers(4, 5)).toBe(' 0  1  2  3  4');
-    });
-    test('11, 3 -> 12 numbers in matrix with max column and min rows', () => {
-        expect(printNumbers(11, 3)).toMatch(' 0  4  8\n' +
-                                            ' 1  5  9\n' +
-                                            ' 2  6 10\n' +
-                                            ' 3  7 11');
-    });
 });
