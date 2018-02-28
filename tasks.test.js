@@ -77,9 +77,6 @@ describe('fibonacciWithCache', () => {
         expect(fibonacciWithCache(2)).toBe(1);
     });
 
-    test('fibonacciWithCache goes as expected', () => {
-        expect(fibonacciWithCache).toThrow();
-    });
 });
 
 describe('printNumbers', () =>{
@@ -109,10 +106,6 @@ describe('printNumbers', () =>{
     test('0, 7 -> 0', () => {
         expect(printNumbers(0, 7)).toMatch(' 0');
     });
-
-    test('printNumbers goes as expected', () => {
-        expect(printNumbers).toThrow();
-    });
 });
 
 describe('RLE', () => {
@@ -134,11 +127,6 @@ describe('RLE', () => {
 
     test('A -> A', () => {
         expect(rle('A')).toBe('A');
-    });
-    
-    test('rle goes as expected', () => {
-        expect(rle).toThrow();
-
     });
 
 });
