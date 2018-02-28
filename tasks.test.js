@@ -30,6 +30,10 @@ describe('getMinMax', () => {
     test('\'1\' -> {min: 1, max: 1}', () => {
         expect(getMinMax('1')).toEqual({min: 1, max: 1});
     });
+
+    test('\'3e2 0x1000\' -> { min: 300, max: 4096 }', () => {
+      expect(getMinMax('3e2 0x1000')).toEqual({ min: 300, max: 4096 });
+    });
 });
 
 const data = Array.from({ length: 21 }, (v, k) => k-10);
