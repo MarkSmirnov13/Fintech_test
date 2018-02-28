@@ -32,7 +32,7 @@ describe('getMinMax', () => {
 
     test('\'3e2 0x1000\' -> { min: 300, max: 4096 }', () => {
       expect(getMinMax('3e2 0x1000')).toEqual({ min: 300, max: 4096 });
-  });
+    });
 });
 
 describe('fibonacciSimple', () => {
